@@ -16,7 +16,7 @@ public class StepTracker {
         }
     }
 
-    public static void SaveSteps(Scanner scanner, int[][] calendar, int monthNumber){
+    public static void saveSteps(Scanner scanner, int[][] calendar, int monthNumber){
         System.out.println("Введите номер дня: ");
         int dayNumber = scanner.nextInt();
         if (dayNumber >= 0 && dayNumber < 30){
@@ -35,7 +35,7 @@ public class StepTracker {
         }
     }
 
-    public  static void SumSteps(int[][] calendar, int monthNumber){
+    public  static void sumSteps(int[][] calendar, int monthNumber){
         int sumSteps = 0;
         for (int i = 0; i < calendar[0].length; i++){
             sumSteps += calendar[monthNumber][i];
@@ -43,7 +43,7 @@ public class StepTracker {
         System.out.println("\nЗа этот месяц пройдено шагов: " + sumSteps + "\n");
     }
 
-    public static void MeanSteps(int[][] calendar, int monthNumber){
+    public static void meanSteps(int[][] calendar, int monthNumber){
         int sumSteps = 0;
         for (int i = 0; i < calendar[0].length; i++){
             sumSteps += calendar[monthNumber][i];
@@ -51,7 +51,7 @@ public class StepTracker {
         System.out.println("За этот месяц в среднем пройдено шагов: " + sumSteps/calendar[0].length + "\n");
     }
 
-    public  static void MaxSteps(int[][] calendar, int monthNumber){
+    public  static void maxSteps(int[][] calendar, int monthNumber){
         int maxSteps = 0;
         for (int i = 0; i < calendar[0].length; i++){
             if (calendar[monthNumber][i] > maxSteps){
@@ -61,7 +61,7 @@ public class StepTracker {
         System.out.println("Ваш дневной рекорд по шагам в этом месяце: " + maxSteps + "\n");
     }
 
-    public static void StepsGoalsStreak(int[][] calendar, int monthNumber, int stepsGoal){
+    public static void stepsGoalsStreak(int[][] calendar, int monthNumber, int stepsGoal){
         int streak = 0;
         int maxStreak = 0;
         for (int i = 0; i < calendar[0].length; i++){
@@ -78,11 +78,11 @@ public class StepTracker {
         System.out.println("Ваша лучшая серия в этом месяце: " + maxStreak + "\n");
     }
 
-    public static int ChangeStepsGoal(Scanner scanner, int stepsGoal){
+    public static int changeStepsGoal(Scanner scanner, int stepsGoal){
         System.out.println("Ваша текущая цель: " + stepsGoal);
         System.out.println("Введите вашу новую дневную цель: ");
         int newStepsGoal = scanner.nextInt();
-        if (newStepsGoal > 0){
+        if (newStepsGoal >= 0){
             stepsGoal = newStepsGoal;
             System.out.println("Ваша новая цель: " + stepsGoal);
         }

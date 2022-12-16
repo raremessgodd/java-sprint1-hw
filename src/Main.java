@@ -11,7 +11,7 @@ public class Main {
             if (userChoice == 1){
                 int month = GetMonthNumber();
                 if (month >= 0 && month < 12){
-                    StepTracker.SaveSteps(scanner, calendar, month);
+                    StepTracker.saveSteps(scanner, calendar, month);
                 }
                 else{
                     System.out.println("Пожалуйста, введите корректный номер месяца.");
@@ -21,19 +21,19 @@ public class Main {
                 int month = GetMonthNumber();
                 if (month >= 0 && month < 12){
                     StepTracker.printSteps(calendar, month);
-                    StepTracker.SumSteps(calendar, month);
-                    StepTracker.MaxSteps(calendar, month);
-                    StepTracker.MeanSteps(calendar, month);
-                    Converter.TotalDistance(calendar, month);
-                    Converter.BurnedCalories(calendar, month);
-                    StepTracker.StepsGoalsStreak(calendar, month, systemStepsGoal);
+                    StepTracker.sumSteps(calendar, month);
+                    StepTracker.maxSteps(calendar, month);
+                    StepTracker.meanSteps(calendar, month);
+                    Converter.totalDistance(calendar, month);
+                    Converter.burnedCalories(calendar, month);
+                    StepTracker.stepsGoalsStreak(calendar, month, systemStepsGoal);
                 }
                 else{
                     System.out.println("Пожалуйста, введите корректный номер месяца.");
                 }
             }
             else if (userChoice == 3){
-                systemStepsGoal = StepTracker.ChangeStepsGoal(scanner, systemStepsGoal);
+                systemStepsGoal = StepTracker.changeStepsGoal(scanner, systemStepsGoal);
             }
             else if (userChoice == 4){
                 System.out.println("Выход...");
@@ -46,7 +46,7 @@ public class Main {
                 "\nВвести количество шагов за определённый день - 1.\n" +
                         "Напечатать статистику за определённый месяц - 2.\n" +
                         "Изменить цель по количеству шагов в день - 3.\n" +
-                        "Выйти из приложения - 4.\n");
+                        "Выйти из приложения - 4.");
     }
 
     public static int GetMonthNumber(){
